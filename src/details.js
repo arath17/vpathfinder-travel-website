@@ -1,0 +1,73 @@
+export const destinationDetails = {
+  Maldives: {
+    strapline: 'Barefoot luxury, perfectly paced.',
+    description: 'A private island rhythm of clear water, quiet mornings, and thoughtful resort experiences. We help match the island, transfer, and meal plan to the way you want to travel.',
+    bestTime: 'November to April',
+    idealLength: '4–6 nights',
+    idealFor: 'Honeymoons, families & slow escapes',
+    experiences: ['Resort and villa selection', 'Speedboat or seaplane transfers', 'Snorkelling and sandbank experiences'],
+  },
+  Europe: {
+    strapline: 'Iconic cities. Your own point of view.',
+    description: 'From Parisian evenings to Swiss mountain railways and Italian piazzas, discover Europe through a route that balances the landmarks with time to wander.',
+    bestTime: 'April to October',
+    idealLength: '8–14 nights',
+    idealFor: 'First-time Europe & multi-city journeys',
+    experiences: ['Multi-city route planning', 'Rail and intercity connections', 'Guided local sightseeing'],
+  },
+  Vietnam: {
+    strapline: 'A journey for every sense.',
+    description: 'Vietnam brings together lantern-lit towns, energetic cities, limestone bays, and remarkable food. We connect its contrasting regions into one smooth, well-supported journey.',
+    bestTime: 'October to April',
+    idealLength: '6–9 nights',
+    idealFor: 'Culture, cuisine & curious travellers',
+    experiences: ['Hanoi and Ho Chi Minh City', 'Ha Long Bay cruise options', 'Local food and heritage walks'],
+  },
+  'Sri Lanka': {
+    strapline: 'Wild, warm, and wonderfully varied.',
+    description: 'Tea country, wildlife, ancient sites, and golden coastlines sit surprisingly close together. A thoughtfully planned route lets you experience Sri Lanka’s variety without rushing.',
+    bestTime: 'December to April',
+    idealLength: '6–8 nights',
+    idealFor: 'Nature, wildlife & boutique stays',
+    experiences: ['Tea country and scenic rail', 'Wildlife safari options', 'Coastal stays and heritage sites'],
+  },
+  Kerala: {
+    strapline: 'Slow down. Drift a little.',
+    description: 'Misty hills, spice gardens, and quiet backwaters make Kerala an escape with natural balance. Pair a houseboat stay with Munnar’s landscapes and Kochi’s living history.',
+    bestTime: 'September to March',
+    idealLength: '5–7 nights',
+    idealFor: 'Families, couples & wellness escapes',
+    experiences: ['Alleppey houseboat experience', 'Munnar tea country', 'Kochi heritage and local cuisine'],
+  },
+  Kashmir: {
+    strapline: 'Mountains, meadows, and quieter moments.',
+    description: 'From Srinagar’s houseboats to Gulmarg’s slopes and Pahalgam’s valleys, Kashmir rewards an itinerary that leaves room for the scenery and the changing mountain pace.',
+    bestTime: 'March to October',
+    idealLength: '5–7 nights',
+    idealFor: 'Families, couples & mountain lovers',
+    experiences: ['Srinagar houseboat stay options', 'Gulmarg and Pahalgam excursions', 'Private cab and sightseeing support'],
+  },
+  Dubai: {
+    strapline: 'Big-city energy. Desert stillness.',
+    description: 'Dubai pairs futuristic skylines with old creek traditions and open desert. We arrange the signature experiences while keeping enough space for shopping, dining, and downtime.',
+    bestTime: 'November to March',
+    idealLength: '4–6 nights',
+    idealFor: 'Families, luxury breaks & stopovers',
+    experiences: ['City tour and Burj Khalifa', 'Desert safari experiences', 'Hotel, transfer, and leisure planning'],
+  },
+  Singapore: {
+    strapline: 'A small city with a world of possibilities.',
+    description: 'Futuristic gardens, rich neighbourhoods, and exceptional food make Singapore easy to explore and hard to forget. Ideal as a complete short break or part of a wider Asian journey.',
+    bestTime: 'Year-round',
+    idealLength: '3–5 nights',
+    idealFor: 'Families, food lovers & city breaks',
+    experiences: ['Gardens by the Bay and city icons', 'Neighbourhood and food discoveries', 'Family-friendly attraction planning'],
+  },
+}
+
+export const planningSteps = [
+  { title: 'Tell us what matters', text: 'Share your destination, dates, travellers, budget, and the kind of experience you want.' },
+  { title: 'We shape the journey', text: 'Your travel expert brings together the right route, flights, stays, transfers, and experiences.' },
+  { title: 'Refine it together', text: 'We adjust the details around your feedback and provide a clear, personalized quotation.' },
+  { title: 'Travel with support', text: 'Once confirmed, we coordinate the bookings and remain available throughout your journey.' },
+]
