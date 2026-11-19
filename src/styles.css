@@ -305,6 +305,44 @@ textarea:focus-visible {
   background: var(--surface-soft);
 }
 
+.google-maps-link {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--teal);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.3;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.google-maps-link > svg {
+  flex: 0 0 auto;
+}
+
+.google-maps-link > svg:last-child {
+  transition: transform 180ms ease;
+}
+
+.google-maps-link:hover {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: var(--surface);
+}
+
+.google-maps-link:hover > svg:last-child {
+  transform: translate(2px, -2px);
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -451,9 +489,27 @@ textarea:focus-visible {
   gap: 7px;
 }
 
-.contact-strip p span {
-  margin-left: 9px;
-  color: rgba(255, 255, 255, 0.55);
+.contact-strip__location .contact-strip__map-action {
+  display: inline-flex;
+  min-height: 23px;
+  align-items: center;
+  gap: 4px;
+  margin-left: 7px;
+  padding: 3px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.contact-strip__location:hover .contact-strip__map-action {
+  border-color: #fff;
+  background: #fff;
+  color: var(--midnight);
 }
 
 .contact-strip a {
@@ -1739,6 +1795,23 @@ textarea:focus-visible {
   letter-spacing: 0.08em;
 }
 
+.about-image-label .about-map-link {
+  min-height: 38px;
+  padding: 8px 12px;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(7, 27, 38, 0.72);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0;
+  backdrop-filter: blur(12px);
+}
+
+.about-image-label .about-map-link:hover {
+  border-color: #fff;
+  background: #fff;
+  color: var(--midnight);
+}
+
 .about-experience {
   position: absolute;
   right: 24px;
@@ -1951,6 +2024,11 @@ textarea:focus-visible {
   line-height: 1.85;
 }
 
+.faq-answer .faq-map-link {
+  display: flex;
+  margin: 14px 0 0;
+}
+
 .reviews-heading {
   position: relative;
   margin-bottom: 70px;
@@ -2102,6 +2180,27 @@ textarea:focus-visible {
 .contact-details small {
   color: rgba(255, 255, 255, 0.48);
   font-size: 9px;
+}
+
+.contact-map-action {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 7px 11px;
+  border: 1px solid var(--adaptive-line);
+  border-radius: var(--radius-pill);
+  background: var(--adaptive-hover);
+  color: var(--adaptive-heading);
+  font-size: 10px;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.contact-details > a:hover .contact-map-action {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: var(--adaptive-bg);
 }
 
 .contact-details > a > svg:last-child {
@@ -2301,6 +2400,22 @@ textarea:focus-visible {
   color: #fff;
 }
 
+.footer-column .footer-map-link {
+  margin: 3px 0 7px;
+  padding: 9px 12px;
+  border: 1px solid var(--footer-line);
+  background: transparent;
+  color: var(--footer-heading);
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.footer-column .footer-map-link:hover {
+  border-color: var(--footer-heading);
+  background: var(--footer-heading);
+  color: var(--footer-bg);
+}
+
 .footer-bottom {
   display: flex;
   align-items: center;
@@ -2472,11 +2587,17 @@ textarea:focus-visible {
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   gap: 9px;
   margin-bottom: 55px;
   color: rgba(255, 255, 255, 0.58);
   font-family: var(--font-mono);
   font-size: 9px;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  gap: 9px;
 }
 
 .page-hero .eyebrow {
@@ -3260,6 +3381,17 @@ textarea:focus-visible {
     font-size: 9px;
   }
 
+  .mobile-nav-foot .mobile-map-link {
+    width: 100%;
+    min-height: 46px;
+    margin-bottom: 16px;
+    font-size: 11px;
+  }
+
+  .mobile-nav-foot p {
+    color: var(--muted);
+  }
+
   .nav-backdrop {
     position: fixed;
     inset: 0;
@@ -3789,7 +3921,14 @@ textarea:focus-visible {
   }
 
   .about-image-label {
+    top: 18px;
+    right: 18px;
+    left: 18px;
     font-size: 7px;
+  }
+
+  .about-image-label > span {
+    display: none;
   }
 
   .about-experience {

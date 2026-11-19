@@ -1,26 +1,16 @@
-import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarDays, Check, Clock3, Compass, MapPin, MessageCircle, Users } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
-import { business, destinations, packages } from './data.js'
+import { destinations, packages } from './data.js'
 import { destinationDetails, planningSteps } from './details.js'
+import { SafeImage, slugify, whatsappUrl } from './ui.jsx'
 
-const fallbackImage = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80'
-const whatsappUrl = (message) => `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`
-export const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-
-function SafeImage({ src, alt, ...props }) {
-  const [source, setSource] = useState(src)
-  useEffect(() => setSource(src), [src])
-  return <img src={source} alt={alt} width="1200" height="800" onError={() => source !== fallbackImage && setSource(fallbackImage)} {...props} />
-}
-
-export function PageHero({ eyebrow, title, italic, text, image, code = 'DEL' }) {
+export function PageHero({ eyebrow, title, italic, text, image, code = 'DEL', breadcrumbs = [{ label: title }] }) {
   return (
     <section className="page-hero">
-      <SafeImage src={image} alt="" data-parallax="0.1" fetchPriority="high" />
+      <SafeImage src={image} alt="" loading="eager" fetchPriority="high" sizes="125vw" data-parallax="0.1" />
       <div className="page-hero__overlay" />
       <div className="shell page-hero__content">
-        <div className="breadcrumbs" data-hero-fade><Link to="/">Home</Link><span>/</span><span>{title}</span></div>
+        <div className="breadcrumbs" data-hero-fade><Link to="/">Home</Link>{breadcrumbs.map((crumb) => <span key={`${crumb.label}-${crumb.path || 'current'}`} className="breadcrumb-item"><span>/</span>{crumb.path ? <Link to={crumb.path}>{crumb.label}</Link> : <span>{crumb.label}</span>}</span>)}</div>
         <p className="eyebrow" data-hero-fade><span />{eyebrow}</p>
         <h1><span data-title-line><span>{title}</span></span>{italic && <span data-title-line><span><em>{italic}</em></span></span>}</h1>
         {text && <p data-hero-fade>{text}</p>}
@@ -38,7 +28,7 @@ export function DestinationDetailPage({ onEnquiry }) {
 
   return (
     <main>
-      <PageHero eyebrow={`${item.region} · ${item.code}`} title={item.name} italic={item.note} text={detail.strapline} image={item.image} code={item.code} />
+      <PageHero eyebrow={`${item.region} · ${item.code}`} title={item.name} italic={item.note} text={detail.strapline} image={item.image} code={item.code} breadcrumbs={[{ label: 'Destinations', path: '/destinations/' }, { label: item.name }]} />
       <section className="section detail-section">
         <div className="shell detail-layout">
           <div className="detail-main" data-reveal>
@@ -63,13 +53,13 @@ export function DestinationDetailPage({ onEnquiry }) {
         </div>
       </section>
       <section className="detail-photo-band">
-        <SafeImage src={item.image} alt={`${item.name} landscape`} loading="lazy" data-parallax="0.14" />
+        <SafeImage src={item.image} alt={`${item.name} landscape`} loading="lazy" sizes="100vw" data-parallax="0.14" />
         <div className="shell"><p>GOOD JOURNEYS AREN’T PACKAGED.<br /><em>They’re personal.</em></p></div>
       </section>
       <section className="section related-section">
         <div className="shell related-inner">
           <div><p className="eyebrow"><span />Keep exploring</p><h2>Another place,<br /><em>another possibility.</em></h2></div>
-          <div className="related-links">{destinations.filter((destination) => destination.name !== item.name).slice(0, 3).map((destination) => <Link key={destination.name} to={`/destinations/${slugify(destination.name)}`}><span><small>{destination.code}</small>{destination.name}</span><ArrowUpRight size={20} /></Link>)}</div>
+          <div className="related-links">{destinations.filter((destination) => destination.name !== item.name).slice(0, 3).map((destination) => <Link key={destination.name} to={`/destinations/${slugify(destination.name)}/`}><span><small>{destination.code}</small>{destination.name}</span><ArrowUpRight size={20} /></Link>)}</div>
         </div>
       </section>
     </main>
@@ -84,7 +74,7 @@ export function PackageDetailPage({ onEnquiry }) {
 
   return (
     <main>
-      <PageHero eyebrow={`${item.badge} · Customizable trip idea`} title={item.name} italic="Made personal." text="An inspiring starting point, with every detail shaped around your dates, preferences, and travel style." image={item.image} code={item.code} />
+      <PageHero eyebrow={`${item.badge} · Customizable trip idea`} title={item.name} italic="Made personal." text="An inspiring starting point, with every detail shaped around your dates, preferences, and travel style." image={item.image} code={item.code} breadcrumbs={[{ label: 'Trip Ideas', path: '/journeys/' }, { label: item.name }]} />
       <section className="section detail-section">
         <div className="shell detail-layout">
           <div className="detail-main" data-reveal>
@@ -107,8 +97,8 @@ export function PackageDetailPage({ onEnquiry }) {
           </aside>
         </div>
       </section>
-      {destination && <section className="detail-photo-band"><SafeImage src={destination.image} alt={destination.name} loading="lazy" data-parallax="0.14" /><div className="shell"><p>THE DESTINATION IS ONLY THE BEGINNING.<br /><em>How you experience it matters.</em></p></div></section>}
-      <section className="section related-section"><div className="shell related-inner"><div><p className="eyebrow"><span />More from the collection</p><h2>Find your next<br /><em>way away.</em></h2></div><div className="related-links">{packages.filter((journey) => journey.name !== item.name).slice(0, 3).map((journey) => <Link key={journey.name} to={`/journeys/${slugify(journey.name)}`}><span><small>{journey.code} · {journey.price}</small>{journey.name}</span><ArrowUpRight size={20} /></Link>)}</div></div></section>
+      {destination && <section className="detail-photo-band"><SafeImage src={destination.image} alt={destination.name} loading="lazy" sizes="100vw" data-parallax="0.14" /><div className="shell"><p>THE DESTINATION IS ONLY THE BEGINNING.<br /><em>How you experience it matters.</em></p></div></section>}
+      <section className="section related-section"><div className="shell related-inner"><div><p className="eyebrow"><span />More from the collection</p><h2>Find your next<br /><em>way away.</em></h2></div><div className="related-links">{packages.filter((journey) => journey.name !== item.name).slice(0, 3).map((journey) => <Link key={journey.name} to={`/journeys/${slugify(journey.name)}/`}><span><small>{journey.code} · {journey.price}</small>{journey.name}</span><ArrowUpRight size={20} /></Link>)}</div></div></section>
     </main>
   )
 }

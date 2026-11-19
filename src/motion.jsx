@@ -9,11 +9,12 @@ const MotionContext = createContext({ lenis: null, reduced: false })
 
 export function MotionProvider({ children }) {
   const [lenis, setLenis] = useState(null)
-  const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+  const [reduced, setReduced] = useState(false)
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)')
     const update = () => setReduced(media.matches)
+    update()
     media.addEventListener('change', update)
     return () => media.removeEventListener('change', update)
   }, [])

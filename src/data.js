@@ -4,14 +4,15 @@ export const business = {
   email: 'info@vpathfindertravel.com',
   alternateEmail: 'vpathfindertravel@gmail.com',
   address: 'M-2, 1st Floor, West Patel Nagar, New Delhi - 110008',
+  googleMaps: 'https://www.google.com/maps/search/?api=1&query=Vpathfinder%20Travel%20Solutions&query_place_id=ChIJV3fd-SgDDTkR42EzST59v7M',
   whatsapp: '919891882922',
 }
 
 export const navItems = [
-  { label: 'Destinations', href: '/destinations' },
-  { label: 'Trip Ideas', href: '/journeys' },
-  { label: 'Services', href: '/services' },
-  { label: 'About', href: '/about' },
+  { label: 'Destinations', href: '/destinations/' },
+  { label: 'Trip Ideas', href: '/journeys/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'About', href: '/about/' },
 ]
 
 export const destinations = [
@@ -58,7 +59,7 @@ export const faqs = [
   { q: 'Do you provide corporate travel management?', a: 'Yes. Vpathfinder provides corporate travel management with ticketing, planning, cost support, and responsive travel assistance.' },
   { q: 'Do you book domestic and international flights?', a: 'Yes. We provide ticketing support for both domestic and international airline routes.' },
   { q: 'Can I customize my holiday package?', a: 'Absolutely. Your itinerary, destination, dates, hotel preference, and budget can all shape the final travel plan.' },
-  { q: 'Where is your office located?', a: 'Our office is at M-2, 1st Floor, West Patel Nagar, New Delhi - 110008.' },
+  { q: 'Where is your office located?', a: 'Our office is at M-2, 1st Floor, West Patel Nagar, New Delhi - 110008.', mapUrl: business.googleMaps },
   { q: 'Do you provide inbound tour services?', a: 'Yes. We operate as an inbound tour operator and destination management company for travellers visiting India.' },
   { q: 'How can I contact your team?', a: 'Call 9891882922 or 9899088689, or email info@vpathfindertravel.com. You can also start a WhatsApp enquiry directly from this website.' },
   { q: 'Do you help with hotel bookings?', a: 'Yes. Hotel booking assistance is available as part of your holiday or business travel plan.' },
