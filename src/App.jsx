@@ -53,7 +53,7 @@ function Header({ onEnquiry }) {
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     lenis?.stop()
-    if (!reduced && window.innerWidth <= 1020) {
+    if (!reduced && window.innerWidth <= 1100) {
       gsap.fromTo(menuRef.current, { xPercent: 100 }, { xPercent: 0, duration: 0.65, ease: 'power4.out' })
       gsap.fromTo(menuRef.current.querySelectorAll('a, .mobile-nav-cta'), { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, stagger: 0.055, delay: 0.15, ease: 'power3.out' })
     }
@@ -69,7 +69,7 @@ function Header({ onEnquiry }) {
 
   const isActive = (href) => location.pathname.startsWith(href)
   const closeMenu = useCallback(() => {
-    if (!menuOpen || reduced || window.innerWidth > 1020) {
+    if (!menuOpen || reduced || window.innerWidth > 1100) {
       setMenuOpen(false)
       return
     }
