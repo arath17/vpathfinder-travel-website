@@ -1,0 +1,62 @@
+{
+  "package.json": {
+    "mtime": 1795004278.6462355,
+    "seen": 1795026855.5991385,
+    "ast_hash": "e350fc4dfd1a1ec4493fe94d4cb575a9",
+    "semantic_hash": "e350fc4dfd1a1ec4493fe94d4cb575a9"
+  },
+  "src/App.jsx": {
+    "mtime": 1795004987.361986,
+    "seen": 1795026855.5991452,
+    "ast_hash": "9573a218a166015f0d4bdf4eea5a08e5",
+    "semantic_hash": "9573a218a166015f0d4bdf4eea5a08e5"
+  },
+  "src/data.js": {
+    "mtime": 1795002428.0594127,
+    "seen": 1795026855.5991478,
+    "ast_hash": "b819dbeaa738d17fe2b93d55c87a42ea",
+    "semantic_hash": "b819dbeaa738d17fe2b93d55c87a42ea"
+  },
+  "src/details.js": {
+    "mtime": 1795000072.0433085,
+    "seen": 1795026855.5991492,
+    "ast_hash": "f1676fa59367ba46210ca8aee633d37c",
+    "semantic_hash": "f1676fa59367ba46210ca8aee633d37c"
+  },
+  "src/main.jsx": {
+    "mtime": 1795001646.34553,
+    "seen": 1795026855.599151,
+    "ast_hash": "5fbda4a65c91e06e8446dc4a4e7ef5b7",
+    "semantic_hash": "5fbda4a65c91e06e8446dc4a4e7ef5b7"
+  },
+  "src/pages.jsx": {
+    "mtime": 1795004907.2945735,
+    "seen": 1795026855.5991518,
+    "ast_hash": "8fe8e314cc51963f45d9de1a57c70bbb",
+    "semantic_hash": "8fe8e314cc51963f45d9de1a57c70bbb"
+  },
+  "src/reviews.js": {
+    "mtime": 1795001685.4348187,
+    "seen": 1795026855.599153,
+    "ast_hash": "687a43e3db7ee8c0d6b9cfb5dcfc57a9",
+    "semantic_hash": "687a43e3db7ee8c0d6b9cfb5dcfc57a9"
+  },
+  "vite.config.js": {
+    "mtime": 1794998539.1821592,
+    "seen": 1795026855.5991542,
+    "ast_hash": "9bf09b6d97edba4eebf0fe93baaad662",
+    "semantic_hash": "9bf09b6d97edba4eebf0fe93baaad662"
+  },
+  "index.html": {
+    "mtime": 1795004907.2935743,
+    "seen": 1795026855.5991554,
+    "ast_hash": "6f93797159b9e3c5229b98808df61257",
+    "semantic_hash": "6f93797159b9e3c5229b98808df61257"
+  },
+  "public/favicon.svg": {
+    "mtime": 1794998539.1926746,
+    "seen": 1795026855.5991566,
+    "ast_hash": "322f8432d3531e9e8a84d44d5c72c127",
+    "semantic_hash": "322f8432d3531e9e8a84d44d5c72c127"
+  }
+}

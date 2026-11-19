@@ -20,12 +20,12 @@ export function PageHero({ eyebrow, title, italic, text, image, code = 'DEL' }) 
       <SafeImage src={image} alt="" data-parallax="0.1" fetchPriority="high" />
       <div className="page-hero__overlay" />
       <div className="shell page-hero__content">
-        <div className="breadcrumbs"><Link to="/">Home</Link><span>/</span><span>{title}</span></div>
-        <p className="eyebrow"><span />{eyebrow}</p>
-        <h1>{title}{italic && <><br /><em>{italic}</em></>}</h1>
-        {text && <p>{text}</p>}
+        <div className="breadcrumbs" data-hero-fade><Link to="/">Home</Link><span>/</span><span>{title}</span></div>
+        <p className="eyebrow" data-hero-fade><span />{eyebrow}</p>
+        <h1><span data-title-line><span>{title}</span></span>{italic && <span data-title-line><span><em>{italic}</em></span></span>}</h1>
+        {text && <p data-hero-fade>{text}</p>}
       </div>
-      <div className="page-hero__route"><span>{code}</span><i /><Compass size={18} /><span>ANYWHERE</span></div>
+      <div className="page-hero__route" data-hero-fade><span>{code}</span><i /><Compass size={18} /><span>ANYWHERE</span></div>
     </section>
   )
 }
