@@ -203,7 +203,7 @@ function App() {
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a><ScrollProgress /><Header onEnquiry={openEnquiry} />
     <div className="page-transition" id="main-content" key={location.pathname} ref={pageRef}><Suspense fallback={null}><Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<HomePage onEnquiry={openEnquiry} />} />
       <Route path="/destinations" element={<DestinationsPage onEnquiry={openEnquiry} onFilterChange={() => setMotionVersion((version) => version + 1)} />} />
       <Route path="/destinations/:slug" element={<DestinationDetailPage onEnquiry={openEnquiry} />} />
       <Route path="/journeys" element={<JourneysPage onEnquiry={openEnquiry} />} />
